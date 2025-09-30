@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Emi Tanaka">
-<meta name="dcterms.date" content="2022-07-18">
+<meta name="author" content="Bagas Ari Wibawanto">
+<meta name="dcterms.date" content="2025-09-30">
 
-<title>Welcome To My Blog Template – Bagas’ Data Study and Explore</title>
+<title>The Secret Language of Water: Predicting Pollution With Standard Sensors – Bagas’ Data Study and Explore</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,7 +22,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -110,9 +130,11 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Welcome To My Blog Template</h1>
+      <h1 class="title">The Secret Language of Water: Predicting Pollution With Standard Sensors</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">news</div>
+                <div class="quarto-category">data science</div>
+                <div class="quarto-category">environment</div>
+                <div class="quarto-category">water quality</div>
               </div>
                   </div>
   </div>
@@ -123,14 +145,14 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Author</div>
       <div class="quarto-title-meta-contents">
-               <p>Emi Tanaka </p>
+               <p>Bagas Ari Wibawanto </p>
             </div>
     </div>
       
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">July 18, 2022</p>
+        <p class="date">September 30, 2025</p>
       </div>
     </div>
     
@@ -149,12 +171,114 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>This is the first post in a Quarto blog. Welcome!</p>
-<p><img src="thumbnail.jpg" class="img-fluid"></p>
+<section id="the-problem-a-hidden-contaminant" class="level2">
+<h2 class="anchored" data-anchor-id="the-problem-a-hidden-contaminant">The Problem: A Hidden Contaminant</h2>
+<p>Nutrient pollution, especially from nitrates, is one of the most widespread environmental challenges today. Runoff from farms, cities, and industry loads our rivers and streams with excess nitrates, triggering harmful algal blooms that create toxic “dead zones” where aquatic life can’t survive. This isn’t just an ecological issue; it’s a growing public health crisis, as nitrate levels in drinking water sources are on the rise.</p>
+<p>Traditionally, monitoring these nitrate levels required expensive, specialised sensors. But what if there was a cheaper, more accessible way? What if we could use the data from standard water-quality sensors that are already in place to accurately predict nitrate concentrations?</p>
+</section>
+<section id="the-data-listening-to-the-rivers" class="level2">
+<h2 class="anchored" data-anchor-id="the-data-listening-to-the-rivers">The Data: Listening to the Rivers</h2>
+<p>This analysis uses high-frequency data from the <strong>National Ecological Observatory Network (NEON)</strong>, a program run by the National Science Foundation in the USA. The data was collected every 15 minutes from three vastly different river sites to see if a single modeling approach could work everywhere.</p>
+<p>As you can see in <strong><a href="#tbl-sites" class="quarto-xref">Table&nbsp;1</a></strong>, the chosen locations represent a wide range of climates and land uses, from the semi-arid grasslands of Colorado to the subarctic taiga of Alaska.</p>
+<div class="cell">
+<div id="tbl-sites" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-sites-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Details of the three diverse NEON sites used in the study.
+</figcaption>
+<div aria-describedby="tbl-sites-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 27%">
+<col style="width: 19%">
+<col style="width: 32%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Characteristic</th>
+<th style="text-align: left;">Arikaree River</th>
+<th style="text-align: left;">Caribou Creek</th>
+<th style="text-align: left;">Lewis Run</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Climate Zone</td>
+<td style="text-align: left;">Semi-arid</td>
+<td style="text-align: left;">Subarctic</td>
+<td style="text-align: left;">Temperate</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Land Use</td>
+<td style="text-align: left;">Grasslands, agriculture</td>
+<td style="text-align: left;">Subarctic taiga</td>
+<td style="text-align: left;">Fields, pastures, woodlands</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Flow Persistence</td>
+<td style="text-align: left;">Intermittent</td>
+<td style="text-align: left;">Perennial by ice</td>
+<td style="text-align: left;">Perennial</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<section id="key-variables-in-the-dataset" class="level4">
+<h4 class="anchored" data-anchor-id="key-variables-in-the-dataset">Key Variables in the Dataset</h4>
+<p>The model didn’t predict nitrate levels from a single measurement, but by understanding the relationships between several key variables measured by standard sensors. These included physical properties like <strong>Water Temperature</strong> and <strong>Surface Water Elevation</strong> (the stream’s height), along with chemical indicators like <strong>Dissolved Oxygen</strong>. The model also used <strong>Specific Conductance</strong>, which measures the water’s ability to conduct electricity (a proxy for dissolved salts and minerals), and <strong>Turbidity</strong>, which is simply a measure of water cloudiness.</p>
+<p>The authors describe several steps they took to clean and prepare the data before analysis:</p>
+<ul>
+<li><p>Data Synchronization: Because nitrate was measured every 15 minutes while other variables were measured more frequently, any measurements that did not align with a nitrate measurement time point were discarded.</p></li>
+<li><p>Removal of Anomalies: Data that had been flagged as anomalous during the standardized NEON quality control process (e.g., due to sensor calibration issues) were removed before the analysis began.</p></li>
+<li><p>Variable Selection (Multicollinearity): The researchers checked for multicollinearity among potential explanatory variables using the variance inflation factor (VIF). Variables that were strongly correlated with others (VIF &lt; 6), such as conductivity and pH, were removed to ensure a robust model. Chlorophyll-a data were also excluded due to a high number of anomalies.</p></li>
+<li><p>Data Transformation: After examining the data distributions, the authors found that turbidity was strongly right-skewed and applied a log transformation to this variable before using it in the models</p></li>
+</ul>
+</section>
+<section id="code-and-software-used" class="level4">
+<h4 class="anchored" data-anchor-id="code-and-software-used">Code and Software Used</h4>
+<p>The paper specifies the software, packages, and location of the code used for the analysis:</p>
+<ul>
+<li><p>Software and Packages: All statistical analyses were performed using R statistical software. The specific packages used were <code>car</code>, <code>gam</code>, <code>mgcv</code>, and <code>forecast</code>.</p></li>
+<li><p>Code Availability: The full R script used to perform the analyses is available in a public GitHub repository: <a href="https://github.com/Claire-K/nitrate_links" class="uri">https://github.com/Claire-K/nitrate_links</a>.</p></li>
+</ul>
+</section>
+</section>
+<section id="the-analysis-unlocking-a-99-accurate-prediction" class="level2">
+<h2 class="anchored" data-anchor-id="the-analysis-unlocking-a-99-accurate-prediction">The Analysis: Unlocking a 99% Accurate Prediction</h2>
+<p>The core finding of the study is astounding: a statistical model was able to explain up to 99% of the variation in nitrate levels using only the standard sensor data mentioned above. This incredible accuracy was achieved across all three distinct environmental sites.</p>
+<p>While the same set of variables was significant at each location, their relative importance changed, highlighting the need for site-specific calibration. For example, <strong><a href="#fig-importance" class="quarto-xref">Figure&nbsp;1</a></strong> shows that Specific Conductance was a powerful predictor at the temperate Lewis Run site, while Temperature was more dominant at the semi-arid Arikaree River.</p>
+<div id="fig-importance" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-importance-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figure_1.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="600">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-importance-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Relative importance of key water-quality variables in explaining nitrate concentration.
+</figcaption>
+</figure>
+</div>
+<p>This tells us that there isn’t a “one-size-fits-all” equation, but there is a “one-size-fits-all” recipe. The same ingredients (variables) work everywhere; you just need to adjust their amounts based on the local environment.</p>
+</section>
+<section id="conclusion-a-new-strategy-for-environmental-monitoring" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion-a-new-strategy-for-environmental-monitoring">Conclusion: A New Strategy for Environmental Monitoring</h2>
+<p>The research by Kermorvant <span class="citation" data-cites="kermorvant2023understanding">(<a href="#ref-kermorvant2023understanding" role="doc-biblioref">Kermorvant et al. 2023</a>)</span> provides a powerful and transferable framework for monitoring water quality. It proves we can leverage existing, inexpensive sensor networks to model nitrate dynamics with a high degree of accuracy.</p>
+<p>This has huge implications. Environmental agencies and water management authorities could potentially reduce their reliance on costly, specialised nitrate sensors, deploying them more strategically while using this modeling approach to fill in the gaps. It opens the door to a future where we can monitor more of our waterways, more often, and more affordably, giving us the crucial insights needed to protect these vital ecosystems.</p>
 
 
 
-</main> <!-- /main -->
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-kermorvant2023understanding" class="csl-entry" role="listitem">
+Kermorvant, C, B Liquet, G Litt, K Mengersen, EE Peterson, RJ Hyndman, et al. 2023. <span>“Understanding Links Between Water-Quality Variables and Nitrate Concentration in Freshwater Streams Using High Frequency Sensor Data.”</span> <em>PLOS ONE</em> 18 (6): e0287640.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

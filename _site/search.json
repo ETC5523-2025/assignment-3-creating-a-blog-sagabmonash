@@ -1,10 +1,38 @@
 [
   {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog Template",
+    "objectID": "posts/The Secret Language of Water/index.html",
+    "href": "posts/The Secret Language of Water/index.html",
+    "title": "The Secret Language of Water: Predicting Pollution With Standard Sensors",
     "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!"
+    "text": "Nutrient pollution, especially from nitrates, is one of the most widespread environmental challenges today. Runoff from farms, cities, and industry loads our rivers and streams with excess nitrates, triggering harmful algal blooms that create toxic “dead zones” where aquatic life can’t survive. This isn’t just an ecological issue; it’s a growing public health crisis, as nitrate levels in drinking water sources are on the rise.\nTraditionally, monitoring these nitrate levels required expensive, specialised sensors. But what if there was a cheaper, more accessible way? What if we could use the data from standard water-quality sensors that are already in place to accurately predict nitrate concentrations?"
+  },
+  {
+    "objectID": "posts/The Secret Language of Water/index.html#the-problem-a-hidden-contaminant",
+    "href": "posts/The Secret Language of Water/index.html#the-problem-a-hidden-contaminant",
+    "title": "The Secret Language of Water: Predicting Pollution With Standard Sensors",
+    "section": "",
+    "text": "Nutrient pollution, especially from nitrates, is one of the most widespread environmental challenges today. Runoff from farms, cities, and industry loads our rivers and streams with excess nitrates, triggering harmful algal blooms that create toxic “dead zones” where aquatic life can’t survive. This isn’t just an ecological issue; it’s a growing public health crisis, as nitrate levels in drinking water sources are on the rise.\nTraditionally, monitoring these nitrate levels required expensive, specialised sensors. But what if there was a cheaper, more accessible way? What if we could use the data from standard water-quality sensors that are already in place to accurately predict nitrate concentrations?"
+  },
+  {
+    "objectID": "posts/The Secret Language of Water/index.html#the-data-listening-to-the-rivers",
+    "href": "posts/The Secret Language of Water/index.html#the-data-listening-to-the-rivers",
+    "title": "The Secret Language of Water: Predicting Pollution With Standard Sensors",
+    "section": "The Data: Listening to the Rivers",
+    "text": "The Data: Listening to the Rivers\nThis analysis uses high-frequency data from the National Ecological Observatory Network (NEON), a program run by the National Science Foundation in the USA. The data was collected every 15 minutes from three vastly different river sites to see if a single modeling approach could work everywhere.\nAs you can see in Table 1, the chosen locations represent a wide range of climates and land uses, from the semi-arid grasslands of Colorado to the subarctic taiga of Alaska.\n\n\n\n\nTable 1: Details of the three diverse NEON sites used in the study.\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nArikaree River\nCaribou Creek\nLewis Run\n\n\n\n\nClimate Zone\nSemi-arid\nSubarctic\nTemperate\n\n\nLand Use\nGrasslands, agriculture\nSubarctic taiga\nFields, pastures, woodlands\n\n\nFlow Persistence\nIntermittent\nPerennial by ice\nPerennial\n\n\n\n\n\n\n\n\n\nKey Variables in the Dataset\nThe model didn’t predict nitrate levels from a single measurement, but by understanding the relationships between several key variables measured by standard sensors. These included physical properties like Water Temperature and Surface Water Elevation (the stream’s height), along with chemical indicators like Dissolved Oxygen. The model also used Specific Conductance, which measures the water’s ability to conduct electricity (a proxy for dissolved salts and minerals), and Turbidity, which is simply a measure of water cloudiness.\nThe authors describe several steps they took to clean and prepare the data before analysis:\n\nData Synchronization: Because nitrate was measured every 15 minutes while other variables were measured more frequently, any measurements that did not align with a nitrate measurement time point were discarded.\nRemoval of Anomalies: Data that had been flagged as anomalous during the standardized NEON quality control process (e.g., due to sensor calibration issues) were removed before the analysis began.\nVariable Selection (Multicollinearity): The researchers checked for multicollinearity among potential explanatory variables using the variance inflation factor (VIF). Variables that were strongly correlated with others (VIF &lt; 6), such as conductivity and pH, were removed to ensure a robust model. Chlorophyll-a data were also excluded due to a high number of anomalies.\nData Transformation: After examining the data distributions, the authors found that turbidity was strongly right-skewed and applied a log transformation to this variable before using it in the models\n\n\n\nCode and Software Used\nThe paper specifies the software, packages, and location of the code used for the analysis:\n\nSoftware and Packages: All statistical analyses were performed using R statistical software. The specific packages used were car, gam, mgcv, and forecast.\nCode Availability: The full R script used to perform the analyses is available in a public GitHub repository: https://github.com/Claire-K/nitrate_links."
+  },
+  {
+    "objectID": "posts/The Secret Language of Water/index.html#the-analysis-unlocking-a-99-accurate-prediction",
+    "href": "posts/The Secret Language of Water/index.html#the-analysis-unlocking-a-99-accurate-prediction",
+    "title": "The Secret Language of Water: Predicting Pollution With Standard Sensors",
+    "section": "The Analysis: Unlocking a 99% Accurate Prediction",
+    "text": "The Analysis: Unlocking a 99% Accurate Prediction\nThe core finding of the study is astounding: a statistical model was able to explain up to 99% of the variation in nitrate levels using only the standard sensor data mentioned above. This incredible accuracy was achieved across all three distinct environmental sites.\nWhile the same set of variables was significant at each location, their relative importance changed, highlighting the need for site-specific calibration. For example, Figure 1 shows that Specific Conductance was a powerful predictor at the temperate Lewis Run site, while Temperature was more dominant at the semi-arid Arikaree River.\n\n\n\n\n\n\nFigure 1: Relative importance of key water-quality variables in explaining nitrate concentration.\n\n\n\nThis tells us that there isn’t a “one-size-fits-all” equation, but there is a “one-size-fits-all” recipe. The same ingredients (variables) work everywhere; you just need to adjust their amounts based on the local environment."
+  },
+  {
+    "objectID": "posts/The Secret Language of Water/index.html#conclusion-a-new-strategy-for-environmental-monitoring",
+    "href": "posts/The Secret Language of Water/index.html#conclusion-a-new-strategy-for-environmental-monitoring",
+    "title": "The Secret Language of Water: Predicting Pollution With Standard Sensors",
+    "section": "Conclusion: A New Strategy for Environmental Monitoring",
+    "text": "Conclusion: A New Strategy for Environmental Monitoring\nThe research by Kermorvant (Kermorvant et al. 2023) provides a powerful and transferable framework for monitoring water quality. It proves we can leverage existing, inexpensive sensor networks to model nitrate dynamics with a high degree of accuracy.\nThis has huge implications. Environmental agencies and water management authorities could potentially reduce their reliance on costly, specialised nitrate sensors, deploying them more strategically while using this modeling approach to fill in the gaps. It opens the door to a future where we can monitor more of our waterways, more often, and more affordably, giving us the crucial insights needed to protect these vital ecosystems."
   },
   {
     "objectID": "about.html",
@@ -18,6 +46,6 @@
     "href": "index.html",
     "title": "ETC5523 Blog Assessment",
     "section": "",
-    "text": "Welcome To My Blog Template\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nJul 18, 2022\n\n\nEmi Tanaka\n\n\n\n\n\n\nNo matching items"
+    "text": "The Secret Language of Water: Predicting Pollution With Standard Sensors\n\n\n\n\n\n\ndata science\n\n\nenvironment\n\n\nwater quality\n\n\n\n\n\n\n\n\n\nSep 30, 2025\n\n\nBagas Ari Wibawanto\n\n\n\n\n\n\nNo matching items"
   }
 ]
