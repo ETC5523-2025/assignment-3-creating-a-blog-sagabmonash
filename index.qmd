@@ -1,5 +1,5 @@
 ---
-title: "ETC5523 Blog Assessment"
+title: "Bagas' Data Study and Explore"
 listing:
   contents: posts
   sort: "date desc"
@@ -11,4 +11,6 @@ page-layout: full
 title-block-banner: true
 ---
 
+## Welcome to My Business Analytics Portfolio
 
+Hi, I'm Bagas. On this site, I explore interesting datasets and share my findings from the ETC5523 unit or others at Monash University.

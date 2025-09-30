@@ -2,6 +2,7 @@
 title: "The Secret Language of Water: Predicting Pollution With Standard Sensors"
 author: "Bagas Ari Wibawanto"
 date: "2025-09-30"
+image: "river-view.jpg"
 categories: [data science, environment, water quality]
 bibliography: ../../references.bib
 ---
