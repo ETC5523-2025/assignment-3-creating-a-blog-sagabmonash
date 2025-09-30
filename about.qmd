@@ -1,13 +1,23 @@
 ---
 title: "About"
-image: profile.jpg
+image: IMG-20250906-WA0029.JPG
 about:
-  template: jolla
+  template: trestles
+  image-shape: round
   links:
+    - icon: twitter
+      text: Twitter
+      href: https://x.com/sagabari
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/bagas-ari-wibawanto
     - icon: github
       text: Github
       href: https://github.com/etc5523-2022
 
 ---
+I am an experienced audit and risk management expert with more than ten years of experience in the public and financial services industries. 
 
-This is a blog template for the ETC5523 Communicating with Data assessment at Monash University.
+I work as a Senior Auditor for Indonesia's Financial Services Authority (OJK). I coordinate and oversee the implementation of the institution's internal anti-fraud policy, which includes managing the whistle-blowing mechanism and conducting investigation audits. I have a strong set of certificates, such as Certified Fraud Examiner (CFE), Certified Public Accountant (CPA), and Certified Integrity Officer.
+
+I am currently working on my Master of Business Analytics at Monash University to improve my skills in making decisions based on data. By learning how to use modern analytical tools, I will be able to not only find financial problems, but also use advanced analytical methods to deal with the problems of fraud detection and financial regulation in a fast-paced, changing world.
