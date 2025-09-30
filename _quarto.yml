@@ -1,5 +1,6 @@
 project:
   type: website
+  output-dir: docs
 
 website:
   title: "Bagas' Data Study and Explore"
@@ -12,6 +13,3 @@ format:
   html:
     theme: sandstone
     css: styles.css
-
-
-
