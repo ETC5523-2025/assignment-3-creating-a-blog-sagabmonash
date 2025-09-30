@@ -2,3 +2,12 @@
 .navbar-dark, .quarto-title-banner {
   background-color: #006DAE;
 }
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+body {
+  background-color: #f8f9fa;
+  font-family: 'Lato'
+}
+
+h1, h2, h3 {
+  color: #005f73;
+}
